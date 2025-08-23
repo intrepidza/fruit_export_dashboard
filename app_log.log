@@ -1,0 +1,22 @@
+2025-08-22 18:00:16 - weather_app - INFO - APP - Begin
+2025-08-22 18:00:16 - weather_app - INFO - Upload files - Begin
+2025-08-22 18:00:16 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-22 18:00:16 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-22 18:00:16 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-22 18:00:16 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-22 18:00:17 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-22 18:00:17 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-22 18:00:17 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prefix=fruit_project%2FDatasets&prettyPrint=false HTTP/1.1" 200 1874
+2025-08-22 18:00:17 - weather_app - INFO -      File Report_2023.xlsx already exists in destination bucket trepz-gcp-data-eng-data-bucket.
+2025-08-22 18:00:17 - weather_app - INFO - Upload files - End
+2025-08-22 18:00:17 - weather_app - INFO - Upload files - Begin
+2025-08-22 18:00:17 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-22 18:00:17 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-22 18:00:18 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-22 18:00:18 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-22 18:00:18 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prefix=fruit_project%2FDatasets&prettyPrint=false HTTP/1.1" 200 1874
+2025-08-22 18:00:18 - weather_app - INFO -      Uploading Report_2024.xlsx to: D:\_Projects\Python\fruit_export_dashboard\_datasets\Report_2024.xlsx...
+2025-08-22 18:00:20 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "POST /upload/storage/v1/b/trepz-gcp-data-eng-data-bucket/o?uploadType=multipart HTTP/1.1" 200 1032
+2025-08-22 18:00:20 - weather_app - INFO -      File Report_2024.xlsx uploaded to destination bucket trepz-gcp-data-eng-data-bucket.
+2025-08-22 18:00:20 - weather_app - INFO - Upload files - End
+2025-08-22 18:00:20 - weather_app - INFO - APP - End
