@@ -8,3 +8,4 @@ pyvenv.cfg
 Lib/
 .vscode/launch.json
 temp.py
+secret.key
