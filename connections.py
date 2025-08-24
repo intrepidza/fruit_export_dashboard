@@ -2,7 +2,7 @@ from google.cloud import storage
 from dotenv import load_dotenv
 import os
 
-from tools import print_and_log, deco_print_and_log
+from utils import print_and_log, deco_print_and_log
 
 # Load environment variables from .env file
 load_dotenv()
@@ -13,8 +13,9 @@ bucket_name = os.environ.get("BUCKET_NAME")
 @deco_print_and_log('Upload files')
 def upload_file(source_file_name, bucket_name=bucket_name, local_path=upload_path):
     """Check if file exists and upload to GCP bucket."""
+    date_part = source_file_name.split('.')[0][-4:]     # Extract Year from file
     full_path = local_path + '\\' + source_file_name
-    destination_prefix = 'fruit_project/Datasets'
+    destination_prefix = f'fruit_project/Datasets/exports/{date_part}'
     destination_blob_name = destination_prefix + '/' + source_file_name
 
     storage_client = storage.Client()
