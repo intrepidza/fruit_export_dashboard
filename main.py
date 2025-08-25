@@ -1,40 +1,40 @@
-from connections import upload_file
 from dotenv import load_dotenv
 import os
 from pathlib import Path
 
+from file_upload import upload_file
+from ingest import read_file, clean_data
+from load import load_table_data
 from metadata import create_dataset_and_table
-from transform import read_file, clean_data
 from utils import print_and_log, deco_print_and_log
 
-
 load_dotenv()
-
 
 upload_path = Path(os.environ.get("LOCAL_PATH") or "") 
 project_id = os.environ.get('PROJECT_ID')
 
-
+print("-----==========-----")
 @deco_print_and_log('APP')
 def main():
-    # Create BigQuery metadata:
+    # Run function for all files in upload folder:
+    # [upload_file(x.name) for x in upload_path.iterdir()]
 
-    dataset_id = 'raw_sars'         # Desired dataset name
+    # Create BigQuery metadata:
+    dataset_id = 'fruit_export'     # Desired dataset name
     table_id = 'sars_export_data'   # Desired table name
 
     create_dataset_and_table(project_id, dataset_id, table_id)
 
-    df = read_file(r'd:\_Projects\Python\fruit_export_dashboard\_datasets\Report_2023.xlsx')
+    # Read excel file into DataFrame and clean it:
+    #### df = read_file(r'd:\_Projects\Python\fruit_export_dashboard\_datasets\Report_2023.xlsx') # Read from local machine
+    df = read_file('Report_2023.xlsx')  # Read from Cloud Storage
+
     df_clean = clean_data(df)
 
-    # print(df_clean)
-    # print(df_clean.info())
-    # df_clean.to_excel('temp.xlsx')
+    # Load DataFrame into BigQuery table:
+    dest_table_id = 'trepz-gcp-data-eng.fruit_export.sars_export_data'
 
-    # print(df_clean.to_string())
-
-    # Run function for all files in upload folder:
-    # [upload_file(x.name) for x in upload_path.iterdir()]
+    load_table_data(df_clean, dest_table_id)
 
 
 # dataset

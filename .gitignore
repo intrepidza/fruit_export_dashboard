@@ -3,6 +3,9 @@ _datasets/
 .archive
 .env
 .secret
+Include/
+.vscode/
+assets/
 Scripts/
 pyvenv.cfg
 Lib/
