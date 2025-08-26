@@ -7,6 +7,7 @@ WITH stg_data AS (
     SELECT DISTINCT
         report_date
     FROM {{ ref('stg_sars_export_data') }}
+    ORDER BY report_date
 )
 
 SELECT
@@ -14,3 +15,4 @@ SELECT
     ,report_date
 
 FROM stg_data
+ORDER BY report_date
