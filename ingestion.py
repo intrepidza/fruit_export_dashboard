@@ -17,6 +17,8 @@ bucket_name = os.environ.get("BUCKET_NAME")
 
 @deco_print_and_log("Read and convert to DataFrame")
 def read_file(file_name):
+    """Checks that file exists in bucket, reads it and returns a DataFrame."""
+
     print_and_log(f"Reading contents of file {file_name}")
     try:
         storage_client = storage.Client()     
@@ -36,7 +38,7 @@ def read_file(file_name):
 
         data = blob[0].download_as_bytes()
 
-        return pd.read_excel(BytesIO(data), na_filter=False).convert_dtypes()
+        return pd.read_excel(BytesIO(data), na_filter=False, dtype={'Tariff': str}).convert_dtypes()
     except Exception as e:
          print_and_log(f"Error while reading file as DataFrame: {e}")
 
@@ -44,7 +46,8 @@ def read_file(file_name):
     
 
 @deco_print_and_log("Clean up DataFrame")
-def clean_data(df):   
+def clean_data(df):
+    """Normalizes column naming and converts data types"""
     # Normalize columns
     try:
         print_and_log("Normalizing column names")
@@ -62,8 +65,9 @@ def clean_data(df):
     # Convert dtypes
     try:
         print_and_log("Converting dtypes")
-        df['tariff'] = df['tariff'].astype('string')
+        # df['tariff'] = df['tariff'].astype('string')
         df['transport_code'] = df['transport_code'].astype('string')
+        df['year_month'] = df['year_month'].astype('string')
         df['chapter'] = df['chapter'].astype('string')
         df['customs_value'] = df['customs_value'].astype('Float64')
     except Exception as e:

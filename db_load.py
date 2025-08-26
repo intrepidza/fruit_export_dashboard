@@ -25,7 +25,7 @@ def load_table_data(df, table_id):
 
         # Load Dataframe to BigQuery:
         job_config = bigquery.LoadJobConfig(
-            write_disposition="WRITE_TRUNCATE",
+            write_disposition="WRITE_APPEND",
             autodetect=True
         )
         client.load_table_from_dataframe(df, table_id, job_config=job_config)

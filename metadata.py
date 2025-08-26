@@ -60,7 +60,7 @@ def create_dataset_and_table(project_id, dataset_id, table_id):
             bigquery.SchemaField('statistical_unit', 'STRING', mode='REQUIRED'),
             bigquery.SchemaField('transport_code', 'STRING', mode='REQUIRED'),
             bigquery.SchemaField('transport_code_description', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('year_month', 'INT64', mode='REQUIRED'),
+            bigquery.SchemaField('year_month', 'STRING', mode='REQUIRED'),
             bigquery.SchemaField('calendar_year', 'INT64', mode='REQUIRED'),
             bigquery.SchemaField('section', 'INT64', mode='REQUIRED'),
             bigquery.SchemaField('section_and_description', 'STRING', mode='REQUIRED'),

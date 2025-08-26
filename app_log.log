@@ -1,0 +1,401 @@
+2025-08-26 09:21:01 - weather_app - INFO - APP - Begin
+2025-08-26 09:21:01 - weather_app - INFO - Creating dataset and table - Begin
+2025-08-26 09:21:01 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 09:21:01 - google.cloud.bigquery.opentelemetry_tracing - DEBUG - This service is instrumented using OpenTelemetry. OpenTelemetry or one of its components could not be imported; please add compatible versions of opentelemetry-api and opentelemetry-instrumentation packages in order to get BigQuery Tracing data.
+2025-08-26 09:21:01 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 09:21:01 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 09:21:02 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 09:21:02 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 09:21:02 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/trepz-gcp-data-eng/datasets?prettyPrint=false HTTP/1.1" 409 None
+2025-08-26 09:21:03 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 09:21:03 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 09:21:03 - weather_app - INFO -      Table raw_sars_export_data created or already exists in dataset fruit_export.
+2025-08-26 09:21:03 - weather_app - INFO - Creating dataset and table - End
+2025-08-26 09:21:03 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 09:21:03 - weather_app - INFO -      Reading contents of file Report_2023.xlsx
+2025-08-26 09:21:03 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 09:21:03 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 09:21:04 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 09:21:04 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 09:21:04 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 09:21:04 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2023%2FReport_2023.xlsx?generation=1756021489664207&alt=media HTTP/1.1" 200 2274192
+2025-08-26 09:21:26 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 09:21:26 - weather_app - INFO - Clean up DataFrame - Begin
+2025-08-26 09:21:26 - weather_app - INFO -      Normalizing column names
+2025-08-26 09:21:26 - weather_app - INFO -      Converting dtypes
+2025-08-26 09:21:26 - weather_app - INFO - Clean up DataFrame - End
+2025-08-26 09:21:26 - weather_app - INFO - Loading BigQuery table - Begin
+2025-08-26 09:21:26 - weather_app - INFO -      Loading table trepz-gcp-data-eng.fruit_export.raw_sars_export_data
+2025-08-26 09:21:27 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 09:21:27 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 09:21:27 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 09:21:27 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 09:21:30 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /upload/bigquery/v2/projects/trepz-gcp-data-eng/jobs?uploadType=multipart HTTP/1.1" 200 3963
+2025-08-26 09:21:30 - weather_app - INFO - Loading BigQuery table - End
+2025-08-26 09:21:30 - weather_app - INFO - APP - End
+2025-08-26 09:24:39 - weather_app - INFO - APP - Begin
+2025-08-26 09:24:39 - weather_app - INFO - Creating dataset and table - Begin
+2025-08-26 09:24:39 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 09:24:39 - google.cloud.bigquery.opentelemetry_tracing - DEBUG - This service is instrumented using OpenTelemetry. OpenTelemetry or one of its components could not be imported; please add compatible versions of opentelemetry-api and opentelemetry-instrumentation packages in order to get BigQuery Tracing data.
+2025-08-26 09:24:39 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 09:24:39 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 09:24:40 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 09:24:40 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 09:24:40 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/trepz-gcp-data-eng/datasets?prettyPrint=false HTTP/1.1" 409 None
+2025-08-26 09:24:41 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 09:24:41 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables?prettyPrint=false HTTP/1.1" 409 None
+2025-08-26 09:24:42 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables/raw_sars_export_data?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 09:24:42 - weather_app - INFO -      Table raw_sars_export_data created or already exists in dataset fruit_export.
+2025-08-26 09:24:42 - weather_app - INFO - Creating dataset and table - End
+2025-08-26 09:24:42 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 09:24:42 - weather_app - INFO -      Reading contents of file Report_2023.xlsx
+2025-08-26 09:24:42 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 09:24:42 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 09:24:42 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 09:24:42 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 09:24:43 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 09:24:43 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2023%2FReport_2023.xlsx?generation=1756021489664207&alt=media HTTP/1.1" 200 2274192
+2025-08-26 09:25:02 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 09:25:02 - weather_app - INFO - Clean up DataFrame - Begin
+2025-08-26 09:25:02 - weather_app - INFO -      Normalizing column names
+2025-08-26 09:25:02 - weather_app - INFO -      Converting dtypes
+2025-08-26 09:25:02 - weather_app - INFO - Clean up DataFrame - End
+2025-08-26 09:25:02 - weather_app - INFO - Loading BigQuery table - Begin
+2025-08-26 09:25:02 - weather_app - INFO -      Loading table trepz-gcp-data-eng.fruit_export.raw_sars_export_data
+2025-08-26 09:25:03 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 09:25:03 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 09:25:04 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 09:25:04 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 09:25:07 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /upload/bigquery/v2/projects/trepz-gcp-data-eng/jobs?uploadType=multipart HTTP/1.1" 200 3963
+2025-08-26 09:25:07 - weather_app - INFO - Loading BigQuery table - End
+2025-08-26 09:25:07 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 09:25:07 - weather_app - INFO -      Reading contents of file Report_2024.xlsx
+2025-08-26 09:25:07 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 09:25:07 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 09:25:07 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 09:25:07 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 09:25:08 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 09:25:08 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2024%2FReport_2024.xlsx?generation=1756021492525821&alt=media HTTP/1.1" 200 2355160
+2025-08-26 09:25:28 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 09:25:28 - weather_app - INFO - Clean up DataFrame - Begin
+2025-08-26 09:25:28 - weather_app - INFO -      Normalizing column names
+2025-08-26 09:25:28 - weather_app - INFO -      Converting dtypes
+2025-08-26 09:25:28 - weather_app - INFO - Clean up DataFrame - End
+2025-08-26 09:25:28 - weather_app - INFO - Loading BigQuery table - Begin
+2025-08-26 09:25:28 - weather_app - INFO -      Loading table trepz-gcp-data-eng.fruit_export.raw_sars_export_data
+2025-08-26 09:25:29 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 09:25:29 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 09:25:29 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 09:25:29 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 09:25:33 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /upload/bigquery/v2/projects/trepz-gcp-data-eng/jobs?uploadType=multipart HTTP/1.1" 200 3963
+2025-08-26 09:25:33 - weather_app - INFO - Loading BigQuery table - End
+2025-08-26 09:25:33 - weather_app - INFO - APP - End
+2025-08-26 09:28:21 - weather_app - INFO - APP - Begin
+2025-08-26 09:28:21 - weather_app - INFO - Creating dataset and table - Begin
+2025-08-26 09:28:21 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 09:28:21 - google.cloud.bigquery.opentelemetry_tracing - DEBUG - This service is instrumented using OpenTelemetry. OpenTelemetry or one of its components could not be imported; please add compatible versions of opentelemetry-api and opentelemetry-instrumentation packages in order to get BigQuery Tracing data.
+2025-08-26 09:28:21 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 09:28:21 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 09:28:22 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 09:28:22 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 09:28:22 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/trepz-gcp-data-eng/datasets?prettyPrint=false HTTP/1.1" 409 None
+2025-08-26 09:28:23 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 09:28:23 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables?prettyPrint=false HTTP/1.1" 409 None
+2025-08-26 09:28:24 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables/raw_sars_export_data?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 09:28:24 - weather_app - INFO -      Table raw_sars_export_data created or already exists in dataset fruit_export.
+2025-08-26 09:28:24 - weather_app - INFO - Creating dataset and table - End
+2025-08-26 09:28:24 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 09:28:24 - weather_app - INFO -      Reading contents of file Report_2023.xlsx
+2025-08-26 09:28:24 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 09:28:24 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 09:28:24 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 09:28:24 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 09:28:25 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 09:28:25 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2023%2FReport_2023.xlsx?generation=1756021489664207&alt=media HTTP/1.1" 200 2274192
+2025-08-26 09:28:54 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 09:28:54 - weather_app - INFO - Clean up DataFrame - Begin
+2025-08-26 09:28:54 - weather_app - INFO -      Normalizing column names
+2025-08-26 09:28:54 - weather_app - INFO -      Converting dtypes
+2025-08-26 09:28:54 - weather_app - INFO - Clean up DataFrame - End
+2025-08-26 09:28:54 - weather_app - INFO - Loading BigQuery table - Begin
+2025-08-26 09:28:54 - weather_app - INFO -      Loading table trepz-gcp-data-eng.fruit_export.raw_sars_export_data
+2025-08-26 09:28:54 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 09:28:54 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 09:28:55 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 09:28:55 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 09:28:56 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables/raw_sars_export_data?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 09:28:59 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /upload/bigquery/v2/projects/trepz-gcp-data-eng/jobs?uploadType=multipart HTTP/1.1" 200 3961
+2025-08-26 09:28:59 - weather_app - INFO - Loading BigQuery table - End
+2025-08-26 09:28:59 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 09:28:59 - weather_app - INFO -      Reading contents of file Report_2024.xlsx
+2025-08-26 09:28:59 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 09:28:59 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 09:29:00 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 09:29:00 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 09:29:01 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 09:29:01 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2024%2FReport_2024.xlsx?generation=1756021492525821&alt=media HTTP/1.1" 200 2355160
+2025-08-26 09:29:27 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 09:29:27 - weather_app - INFO - Clean up DataFrame - Begin
+2025-08-26 09:29:27 - weather_app - INFO -      Normalizing column names
+2025-08-26 09:29:27 - weather_app - INFO -      Converting dtypes
+2025-08-26 09:29:27 - weather_app - INFO - Clean up DataFrame - End
+2025-08-26 09:29:27 - weather_app - INFO - Loading BigQuery table - Begin
+2025-08-26 09:29:27 - weather_app - INFO -      Loading table trepz-gcp-data-eng.fruit_export.raw_sars_export_data
+2025-08-26 09:29:27 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 09:29:27 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 09:29:28 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 09:29:28 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 09:29:29 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables/raw_sars_export_data?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 09:29:32 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /upload/bigquery/v2/projects/trepz-gcp-data-eng/jobs?uploadType=multipart HTTP/1.1" 200 3961
+2025-08-26 09:29:32 - weather_app - INFO - Loading BigQuery table - End
+2025-08-26 09:29:32 - weather_app - INFO - APP - End
+2025-08-26 11:07:39 - weather_app - INFO - APP - Begin
+2025-08-26 11:07:39 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 11:07:39 - weather_app - INFO -      Reading contents of file Report_2023.xlsx
+2025-08-26 11:07:39 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 11:07:40 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 11:07:40 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 11:07:40 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 11:07:40 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 11:07:40 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 11:07:41 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 11:07:41 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2023%2FReport_2023.xlsx?generation=1756021489664207&alt=media HTTP/1.1" 200 2274192
+2025-08-26 11:08:02 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 11:08:02 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 11:08:02 - weather_app - INFO -      Reading contents of file Report_2024.xlsx
+2025-08-26 11:08:02 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 11:08:02 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 11:08:03 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 11:08:03 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 11:08:03 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 11:08:03 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2024%2FReport_2024.xlsx?generation=1756021492525821&alt=media HTTP/1.1" 200 2355160
+2025-08-26 11:08:24 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 11:08:25 - weather_app - INFO - APP - End
+2025-08-26 11:08:53 - weather_app - INFO - APP - Begin
+2025-08-26 11:08:53 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 11:08:53 - weather_app - INFO -      Reading contents of file Report_2023.xlsx
+2025-08-26 11:08:53 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 11:08:53 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 11:08:53 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 11:08:53 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 11:08:54 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 11:08:54 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 11:08:54 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 11:08:54 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2023%2FReport_2023.xlsx?generation=1756021489664207&alt=media HTTP/1.1" 200 2274192
+2025-08-26 11:09:15 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 11:09:15 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 11:09:15 - weather_app - INFO -      Reading contents of file Report_2024.xlsx
+2025-08-26 11:09:15 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 11:09:15 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 11:09:15 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 11:09:15 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 11:09:16 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 11:09:16 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2024%2FReport_2024.xlsx?generation=1756021492525821&alt=media HTTP/1.1" 200 2355160
+2025-08-26 11:09:36 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 11:09:36 - weather_app - INFO - APP - End
+2025-08-26 12:33:45 - weather_app - INFO - APP - Begin
+2025-08-26 12:33:45 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 12:33:45 - weather_app - INFO -      Reading contents of file Report_2023.xlsx
+2025-08-26 12:33:45 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 12:33:45 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 12:33:45 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 12:33:45 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 12:33:45 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 12:33:45 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 12:33:46 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 12:33:46 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2023%2FReport_2023.xlsx?generation=1756021489664207&alt=media HTTP/1.1" 200 2274192
+2025-08-26 12:33:56 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 12:33:56 - weather_app - INFO - Clean up DataFrame - Begin
+2025-08-26 12:33:56 - weather_app - INFO -      Normalizing column names
+2025-08-26 12:33:56 - weather_app - INFO -      Converting dtypes
+2025-08-26 12:33:56 - weather_app - INFO - Clean up DataFrame - End
+2025-08-26 12:33:56 - weather_app - INFO - Loading BigQuery table - Begin
+2025-08-26 12:33:56 - weather_app - INFO -      Loading table trepz-gcp-data-eng.fruit_export.raw_sars_export_data
+2025-08-26 12:33:56 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 12:33:56 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 12:33:57 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 12:33:57 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 12:33:58 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables/raw_sars_export_data?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 12:34:01 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /upload/bigquery/v2/projects/trepz-gcp-data-eng/jobs?uploadType=multipart HTTP/1.1" 200 3961
+2025-08-26 12:34:01 - weather_app - INFO - Loading BigQuery table - End
+2025-08-26 12:34:01 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 12:34:01 - weather_app - INFO -      Reading contents of file Report_2024.xlsx
+2025-08-26 12:34:01 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 12:34:01 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 12:34:02 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 12:34:02 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 12:34:02 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 12:34:02 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2024%2FReport_2024.xlsx?generation=1756021492525821&alt=media HTTP/1.1" 200 2355160
+2025-08-26 12:34:13 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 12:34:13 - weather_app - INFO - Clean up DataFrame - Begin
+2025-08-26 12:34:13 - weather_app - INFO -      Normalizing column names
+2025-08-26 12:34:13 - weather_app - INFO -      Converting dtypes
+2025-08-26 12:34:13 - weather_app - INFO - Clean up DataFrame - End
+2025-08-26 12:34:13 - weather_app - INFO - Loading BigQuery table - Begin
+2025-08-26 12:34:13 - weather_app - INFO -      Loading table trepz-gcp-data-eng.fruit_export.raw_sars_export_data
+2025-08-26 12:34:13 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 12:34:13 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 12:34:14 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 12:34:14 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 12:34:15 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables/raw_sars_export_data?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 12:34:18 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /upload/bigquery/v2/projects/trepz-gcp-data-eng/jobs?uploadType=multipart HTTP/1.1" 200 3961
+2025-08-26 12:34:18 - weather_app - INFO - Loading BigQuery table - End
+2025-08-26 12:34:18 - weather_app - INFO - APP - End
+2025-08-26 14:22:36 - weather_app - INFO - APP - Begin
+2025-08-26 14:22:36 - weather_app - INFO - Creating dataset and table - Begin
+2025-08-26 14:22:36 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 14:22:36 - google.cloud.bigquery.opentelemetry_tracing - DEBUG - This service is instrumented using OpenTelemetry. OpenTelemetry or one of its components could not be imported; please add compatible versions of opentelemetry-api and opentelemetry-instrumentation packages in order to get BigQuery Tracing data.
+2025-08-26 14:22:36 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 14:22:36 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 14:22:37 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 14:22:37 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 14:22:38 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/trepz-gcp-data-eng/datasets?prettyPrint=false HTTP/1.1" 409 None
+2025-08-26 14:22:38 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 14:22:39 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables?prettyPrint=false HTTP/1.1" 400 None
+2025-08-26 14:22:39 - weather_app - INFO -      An error occurred: 400 POST https://bigquery.googleapis.com/bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables?prettyPrint=false: Invalid value for type: SUBSTRING is not a valid value
+2025-08-26 14:24:22 - weather_app - INFO - APP - Begin
+2025-08-26 14:24:22 - weather_app - INFO - Creating dataset and table - Begin
+2025-08-26 14:24:22 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 14:24:22 - google.cloud.bigquery.opentelemetry_tracing - DEBUG - This service is instrumented using OpenTelemetry. OpenTelemetry or one of its components could not be imported; please add compatible versions of opentelemetry-api and opentelemetry-instrumentation packages in order to get BigQuery Tracing data.
+2025-08-26 14:24:22 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 14:24:22 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 14:24:23 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 14:24:23 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 14:24:24 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/trepz-gcp-data-eng/datasets?prettyPrint=false HTTP/1.1" 409 None
+2025-08-26 14:24:24 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 14:24:25 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 14:24:25 - weather_app - INFO -      Table raw_sars_export_data created or already exists in dataset fruit_export.
+2025-08-26 14:24:25 - weather_app - INFO - Creating dataset and table - End
+2025-08-26 14:24:25 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 14:24:25 - weather_app - INFO -      Reading contents of file Report_2023.xlsx
+2025-08-26 14:24:25 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 14:24:25 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 14:24:25 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 14:24:25 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 14:24:26 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 14:24:26 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2023%2FReport_2023.xlsx?generation=1756021489664207&alt=media HTTP/1.1" 200 2274192
+2025-08-26 14:24:37 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 14:24:37 - weather_app - INFO - Clean up DataFrame - Begin
+2025-08-26 14:24:37 - weather_app - INFO -      Normalizing column names
+2025-08-26 14:24:37 - weather_app - INFO -      Converting dtypes
+2025-08-26 14:24:37 - weather_app - INFO - Clean up DataFrame - End
+2025-08-26 14:24:37 - weather_app - INFO - Loading BigQuery table - Begin
+2025-08-26 14:24:37 - weather_app - INFO -      Loading table trepz-gcp-data-eng.fruit_export.raw_sars_export_data
+2025-08-26 14:24:37 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 14:24:37 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 14:24:38 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 14:24:38 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 14:24:39 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables/raw_sars_export_data?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 14:24:42 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /upload/bigquery/v2/projects/trepz-gcp-data-eng/jobs?uploadType=multipart HTTP/1.1" 200 3960
+2025-08-26 14:24:42 - weather_app - INFO - Loading BigQuery table - End
+2025-08-26 14:24:42 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 14:24:42 - weather_app - INFO -      Reading contents of file Report_2024.xlsx
+2025-08-26 14:24:42 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 14:24:43 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 14:24:43 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 14:24:43 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 14:24:43 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 14:24:44 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2024%2FReport_2024.xlsx?generation=1756021492525821&alt=media HTTP/1.1" 200 2355160
+2025-08-26 14:24:55 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 14:24:55 - weather_app - INFO - Clean up DataFrame - Begin
+2025-08-26 14:24:55 - weather_app - INFO -      Normalizing column names
+2025-08-26 14:24:55 - weather_app - INFO -      Converting dtypes
+2025-08-26 14:24:55 - weather_app - INFO - Clean up DataFrame - End
+2025-08-26 14:24:55 - weather_app - INFO - Loading BigQuery table - Begin
+2025-08-26 14:24:55 - weather_app - INFO -      Loading table trepz-gcp-data-eng.fruit_export.raw_sars_export_data
+2025-08-26 14:24:55 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 14:24:55 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 14:24:56 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 14:24:56 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 14:24:56 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables/raw_sars_export_data?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 14:24:59 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /upload/bigquery/v2/projects/trepz-gcp-data-eng/jobs?uploadType=multipart HTTP/1.1" 200 3960
+2025-08-26 14:24:59 - weather_app - INFO - Loading BigQuery table - End
+2025-08-26 14:24:59 - weather_app - INFO - APP - End
+2025-08-26 14:29:45 - weather_app - INFO - APP - Begin
+2025-08-26 14:29:45 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 14:29:45 - weather_app - INFO -      Reading contents of file Report_2023.xlsx
+2025-08-26 14:29:45 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 14:29:45 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 14:29:45 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 14:29:45 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 14:29:46 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 14:29:46 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 14:29:46 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 14:29:46 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2023%2FReport_2023.xlsx?generation=1756021489664207&alt=media HTTP/1.1" 200 2274192
+2025-08-26 14:29:58 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 14:30:06 - weather_app - INFO - APP - End
+2025-08-26 14:31:03 - weather_app - INFO - APP - Begin
+2025-08-26 14:31:03 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 14:31:03 - weather_app - INFO -      Reading contents of file Report_2023.xlsx
+2025-08-26 14:31:03 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 14:31:03 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 14:31:03 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 14:31:03 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 14:31:04 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 14:31:04 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 14:31:04 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 14:31:04 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2023%2FReport_2023.xlsx?generation=1756021489664207&alt=media HTTP/1.1" 200 2274192
+2025-08-26 14:31:16 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 14:31:24 - weather_app - INFO - Clean up DataFrame - Begin
+2025-08-26 14:31:24 - weather_app - INFO -      Normalizing column names
+2025-08-26 14:31:24 - weather_app - INFO -      Converting dtypes
+2025-08-26 14:31:24 - weather_app - INFO - Clean up DataFrame - End
+2025-08-26 14:31:32 - weather_app - INFO - APP - End
+2025-08-26 14:34:50 - weather_app - INFO - APP - Begin
+2025-08-26 14:34:50 - weather_app - INFO - Creating dataset and table - Begin
+2025-08-26 14:34:50 - google.auth._default - DEBUG - Checking D:\_Projects\Python\fruit_export_dashboard\.secret\trepz-gcp-data-eng-d19339d70b63.json for explicit credentials as part of auth process...
+2025-08-26 14:34:50 - google.cloud.bigquery.opentelemetry_tracing - DEBUG - This service is instrumented using OpenTelemetry. OpenTelemetry or one of its components could not be imported; please add compatible versions of opentelemetry-api and opentelemetry-instrumentation packages in order to get BigQuery Tracing data.
+2025-08-26 14:34:50 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 14:34:50 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 14:34:51 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 14:34:51 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 14:34:51 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/trepz-gcp-data-eng/datasets?prettyPrint=false HTTP/1.1" 409 None
+2025-08-26 14:34:52 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 14:34:52 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 14:34:52 - weather_app - INFO -      Table raw_sars_export_data created or already exists in dataset fruit_export.
+2025-08-26 14:34:52 - weather_app - INFO - Creating dataset and table - End
+2025-08-26 14:34:52 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 14:34:52 - weather_app - INFO -      Reading contents of file Report_2023.xlsx
+2025-08-26 14:34:52 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 14:34:52 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 14:34:53 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 14:34:53 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 14:34:53 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 14:34:53 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2023%2FReport_2023.xlsx?generation=1756021489664207&alt=media HTTP/1.1" 200 2274192
+2025-08-26 14:35:04 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 14:35:04 - weather_app - INFO - Clean up DataFrame - Begin
+2025-08-26 14:35:04 - weather_app - INFO -      Normalizing column names
+2025-08-26 14:35:04 - weather_app - INFO -      Converting dtypes
+2025-08-26 14:35:04 - weather_app - INFO - Clean up DataFrame - End
+2025-08-26 14:35:04 - weather_app - INFO - Loading BigQuery table - Begin
+2025-08-26 14:35:04 - weather_app - INFO -      Loading table trepz-gcp-data-eng.fruit_export.raw_sars_export_data
+2025-08-26 14:35:04 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 14:35:04 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 14:35:05 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 14:35:05 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 14:35:06 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables/raw_sars_export_data?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 14:35:09 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /upload/bigquery/v2/projects/trepz-gcp-data-eng/jobs?uploadType=multipart HTTP/1.1" 200 3960
+2025-08-26 14:35:09 - weather_app - INFO - Loading BigQuery table - End
+2025-08-26 14:35:09 - weather_app - INFO - Read and convert to DataFrame - Begin
+2025-08-26 14:35:09 - weather_app - INFO -      Reading contents of file Report_2024.xlsx
+2025-08-26 14:35:09 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 14:35:09 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 14:35:10 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 14:35:10 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2025-08-26 14:35:10 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /storage/v1/b/trepz-gcp-data-eng-data-bucket/o?projection=noAcl&prettyPrint=false HTTP/1.1" 200 23474
+2025-08-26 14:35:10 - urllib3.connectionpool - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/trepz-gcp-data-eng-data-bucket/o/fruit_project%2FDatasets%2Fexports%2F2024%2FReport_2024.xlsx?generation=1756021492525821&alt=media HTTP/1.1" 200 2355160
+2025-08-26 14:35:22 - weather_app - INFO - Read and convert to DataFrame - End
+2025-08-26 14:35:22 - weather_app - INFO - Clean up DataFrame - Begin
+2025-08-26 14:35:22 - weather_app - INFO -      Normalizing column names
+2025-08-26 14:35:22 - weather_app - INFO -      Converting dtypes
+2025-08-26 14:35:22 - weather_app - INFO - Clean up DataFrame - End
+2025-08-26 14:35:22 - weather_app - INFO - Loading BigQuery table - Begin
+2025-08-26 14:35:22 - weather_app - INFO -      Loading table trepz-gcp-data-eng.fruit_export.raw_sars_export_data
+2025-08-26 14:35:22 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-08-26 14:35:22 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-08-26 14:35:23 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2025-08-26 14:35:23 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): bigquery.googleapis.com:443
+2025-08-26 14:35:24 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "GET /bigquery/v2/projects/trepz-gcp-data-eng/datasets/fruit_export/tables/raw_sars_export_data?prettyPrint=false HTTP/1.1" 200 None
+2025-08-26 14:35:26 - urllib3.connectionpool - DEBUG - https://bigquery.googleapis.com:443 "POST /upload/bigquery/v2/projects/trepz-gcp-data-eng/jobs?uploadType=multipart HTTP/1.1" 200 3960
+2025-08-26 14:35:26 - weather_app - INFO - Loading BigQuery table - End
+2025-08-26 14:35:26 - weather_app - INFO - APP - End
