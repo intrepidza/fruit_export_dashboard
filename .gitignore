@@ -5,7 +5,6 @@ _datasets/
 .secret
 Include/
 .vscode/
-assets/
 Scripts/
 pyvenv.cfg
 Lib/
@@ -13,3 +12,4 @@ Lib/
 temp.py
 secret.key
 share/
+_documents/

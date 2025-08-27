@@ -1,13 +1,9 @@
-from google.cloud import bigquery
-
-# from google.cloud.exceptions import GoogleCloudError
-from google.api_core.exceptions import GoogleAPIError
-
-
 from dotenv import load_dotenv
+from google.cloud import bigquery
+from google.api_core.exceptions import GoogleAPIError
+import os
 
 from utils import print_and_log, deco_print_and_log
-import os
 
 # Load environment variables
 load_dotenv()

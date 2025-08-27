@@ -1,6 +1,5 @@
-from google.cloud import storage
-
 from dotenv import load_dotenv
+from google.cloud import storage
 from io import BytesIO
 import os
 import pandas as pd
@@ -24,10 +23,8 @@ def read_file(file_name):
         storage_client = storage.Client()     
 
         # Bucket and file:
-        # file_path = f'fruit_project/Datasets/exports/2023/'
 
         bucket = storage_client.bucket(bucket_name)
-        # blob = bucket.blob(file_path)
 
         blobs = bucket.list_blobs()
 
@@ -42,8 +39,6 @@ def read_file(file_name):
     except Exception as e:
          print_and_log(f"Error while reading file as DataFrame: {e}")
 
-    # return pd.read_excel(file_name, na_filter=False).convert_dtypes() # na_filter is important to not drop Namibia Country Code
-    
 
 @deco_print_and_log("Clean up DataFrame")
 def clean_data(df):
@@ -65,7 +60,6 @@ def clean_data(df):
     # Convert dtypes
     try:
         print_and_log("Converting dtypes")
-        # df['tariff'] = df['tariff'].astype('string')
         df['transport_code'] = df['transport_code'].astype('string')
         df['year_month'] = df['year_month'].astype('string')
         df['chapter'] = df['chapter'].astype('string')
