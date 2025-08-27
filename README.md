@@ -16,7 +16,7 @@ DBT (as seen in 'dbt_structure/' folder) was then used to generate models based 
 - fct_sars_export_data (fact) = For storing of measures, de-normalized reporting fields
 - vw_sars_export_data (view) = combines the dimensions and fact tables for easier reference
 
-DBT helps to create consistent models, track the data lineage of the data, version the models, and run tests which can be derived from Business Rules.
+DBT helps to create consistent models, document, track the data lineage of the data, version the models, and run tests which can be derived from Business Rules.
 
 Looker is then used to visualize the data:
 - https://lookerstudio.google.com/s/mIilDK4qltY
