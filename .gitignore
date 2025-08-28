@@ -14,3 +14,4 @@ secret.key
 share/
 _documents/
 pdf_table_extractor.py
+schema.txt
