@@ -5,6 +5,7 @@ SARS Trade Statistics for Fruit Exports mini-project
 A small end-to-end project that loads SARS Trade Statistics data specific to fruit exports (Section 2, Chapter 8), transforms it and makes it available in a Dashboard.
 
 Source data files obtained from SARS website: https://tools.sars.gov.za/tradestatsportal/data_download.aspx
+
 These were cross-referenced with the Tariff Book document: https://www.sars.gov.za/wp-content/uploads/Legal/SCEA1964/Legal-LPrim-CE-Sch1P1Chpt1-to-99-Schedule-No-1-Part-1-Chapters-1-to-99.pdf
 
 While not very granular (i.e. no data on varietals of fruit), the output is still useful to give an idea as to the overall trading volumes to various countries.
@@ -38,11 +39,13 @@ Interestingly I picked up two codes which I don't believe should be in the trade
 
 DBT helps to create consistent models, the surrogate keys for the dimensions, documentation, tracking of the data lineage of the data, versioning of the models, and running tests which can be derived from Business Rules.
 
-Example DBT lineage output:
+Example DBT data lineage output:
+
 ![alt text](https://github.com/intrepidza/fruit_export_dashboard/blob/main/assets/dbt-dag.png?raw=true)
 
 
 Example Entity Relationship Diagram: (created in dbdiagram.io)
+
 ![alt text](https://github.com/intrepidza/fruit_export_dashboard/blob/main/assets/ERD.png?raw=true)
 
 To note:
@@ -57,7 +60,8 @@ To note:
 
 
 Snapshot sample:
-![alt text](https://github.com/intrepidza/fruit_export_dashboard/blob/main/assets/snapshot.jpg?raw=true)
+
+![alt text](https://github.com/intrepidza/fruit_export_dashboard/blob/main/assets/Snapshot.png?raw=true)
 
 
 This dashboard supports cross-filtering via the components, parameter selection (data and HS Code) and drill-down (of specific component)
