@@ -22,25 +22,24 @@ calendar_dim AS (
 )
 
 SELECT 
-fct.district_office_code
-,fct.district_office_name
-,fct.country_of_origin_code
-,fct.country_of_origin_name
-,r_dim.country_of_destination_code
-,r_dim.country_of_destination_name
---,fct.hs_id
-,dim.hs_code
-,dim.hs_code_description
-,fct.transport_code
-,fct.transport_code_description	
-,cd.report_date
-,dim.section_code
-,dim.section_description
-,dim.chapter_code
-,dim.chapter_description
-,fct.statistical_quantity
-,fct.customs_value
-,r_dim.world_region
+    fct.district_office_code
+    ,fct.district_office_name
+    ,fct.country_of_origin_code
+    ,fct.country_of_origin_name
+    ,r_dim.country_of_destination_code
+    ,r_dim.country_of_destination_name
+    ,dim.hs_code
+    ,dim.hs_code_description
+    ,fct.transport_code
+    ,fct.transport_code_description	
+    ,cd.report_date
+    ,dim.section_code
+    ,dim.section_description
+    ,dim.chapter_code
+    ,dim.chapter_description
+    ,fct.statistical_quantity
+    ,fct.customs_value
+    ,r_dim.world_region
 FROM fct_data fct
 INNER JOIN hs_dim dim
     ON dim.hs_id = fct.hs_id

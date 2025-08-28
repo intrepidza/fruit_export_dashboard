@@ -25,26 +25,17 @@ calendar_dim AS (
 )
 
 SELECT 
-district_office_code
-,district_office_name
-,country_of_origin_code
-,country_of_origin_name
-,region_id
---,country_of_destination_code
---,country_of_destination_name
-,hd.hs_id
---,tariff AS hs_code
-,transport_code
-,transport_code_description
-,cd.calendar_id
---,2 AS section
---,'Vegetables' AS section_description
---,chapter
---,chapter_and_description
---,tariff_and_description
-,statistical_quantity
-,customs_value
---,world_region
+    district_office_code
+    ,district_office_name
+    ,country_of_origin_code
+    ,country_of_origin_name
+    ,region_id
+    ,hd.hs_id
+    ,transport_code
+    ,transport_code_description
+    ,cd.calendar_id
+    ,statistical_quantity
+    ,customs_value
 FROM stg_data sd
 LEFT OUTER JOIN hs_dim hd
     ON hd.hs_code = sd.hs_code
