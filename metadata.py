@@ -3,9 +3,50 @@ from google.cloud import bigquery
 from google.api_core.exceptions import GoogleAPIError
 from utils import print_and_log, deco_print_and_log
 
+schemas = [
+    {
+    'raw_sars_export_data': [ 
+        bigquery.SchemaField('trade_type', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('district_office_code', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('district_office_name', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('country_of_origin', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('country_of_origin_name', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('country_of_destination', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('country_of_destination_name', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('tariff', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('statistical_unit', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('transport_code', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('transport_code_description', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('year_month', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('calendar_year', 'INT64', mode='REQUIRED'),
+        bigquery.SchemaField('section', 'INT64', mode='REQUIRED'),
+        bigquery.SchemaField('section_and_description', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('chapter', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('chapter_and_description', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('tariff_and_description', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('statistical_quantity', 'FLOAT64', mode='REQUIRED'),
+        bigquery.SchemaField('customs_value', 'FLOAT64', mode='REQUIRED'),
+        bigquery.SchemaField('world_region', 'STRING', mode='REQUIRED'),
+    ],
+    'lkp_hs_code_data': [ # (Lookup Table)
+        bigquery.SchemaField('hs_code', 'STRING', mode='REQUIRED'),
+        bigquery.SchemaField('hs_code_heading', 'STRING', mode='NULLABLE'),
+        bigquery.SchemaField('hs_code_heading_shortened', 'STRING', mode='NULLABLE'),
+        bigquery.SchemaField('hs_code_subheading_1', 'STRING', mode='NULLABLE'),
+        bigquery.SchemaField('hs_code_subheading_1_shortened', 'STRING', mode='NULLABLE'),
+        bigquery.SchemaField('hs_code_subheading_2', 'STRING', mode='NULLABLE'),
+        bigquery.SchemaField('hs_code_subheading_2_shortened', 'STRING', mode='NULLABLE'),
+        bigquery.SchemaField('detail', 'STRING', mode='NULLABLE'),
+        bigquery.SchemaField('detail_shortened', 'STRING', mode='NULLABLE'),
+        bigquery.SchemaField('friendly_summary_description', 'STRING', mode='NULLABLE'),
+    ]
+    }
+]
+
+
 
 @deco_print_and_log("Creating dataset and table")
-def create_dataset_and_table(project_id, dataset_id, table_id):
+def create_dataset_and_table(project_id, dataset_id, table_id, schema):
     try:
         # Initialize BigQuery:
         client = bigquery.Client(project=project_id)
@@ -18,30 +59,6 @@ def create_dataset_and_table(project_id, dataset_id, table_id):
         dataset.location = "US"
         dataset = client.create_dataset(dataset, exists_ok=True)
         print(f"Dataset {dataset_id} created or already exists.")
-
-        schema = [
-            bigquery.SchemaField('trade_type', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('district_office_code', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('district_office_name', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('country_of_origin', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('country_of_origin_name', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('country_of_destination', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('country_of_destination_name', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('tariff', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('statistical_unit', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('transport_code', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('transport_code_description', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('year_month', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('calendar_year', 'INT64', mode='REQUIRED'),
-            bigquery.SchemaField('section', 'INT64', mode='REQUIRED'),
-            bigquery.SchemaField('section_and_description', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('chapter', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('chapter_and_description', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('tariff_and_description', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('statistical_quantity', 'FLOAT64', mode='REQUIRED'),
-            bigquery.SchemaField('customs_value', 'FLOAT64', mode='REQUIRED'),
-            bigquery.SchemaField('world_region', 'STRING', mode='REQUIRED'),
-        ]
 
         # Define table reference:
         table_ref = dataset_ref.table(table_id)

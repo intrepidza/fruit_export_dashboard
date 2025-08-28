@@ -2,9 +2,11 @@ version: 2
 
 sources:
     - name: fruit_export
-      description: This is a replica of the Postgres database used by our app
+      description: Fruit export project datasets
       database: trepz-gcp-data-eng
       schema: fruit_export
       tables:
           - name: raw_sars_export_data
-            description: Testing
+            description: raw SARS tariff data
+          - name: lkp_hs_code_data
+            description: HS codes and descriptions derived from SARS Tarriff Book
