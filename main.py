@@ -29,7 +29,7 @@ def main():
     #### df = read_file(r'd:\_Projects\Python\fruit_export_dashboard\_datasets\Report_2023.xlsx') # Read from local machine
     
     # Read excel file into DataFrame, clean it and load into table:
-    for file in ['Report_2023.xlsx', 'Report_2024.xlsx']:
+    for file in ['Report_2023.xlsx', 'Report_2024.xlsx', 'Report_2025.xlsx']:
         df = read_file(file)  # Read from Cloud Storage
         df_clean = clean_data(df)
 

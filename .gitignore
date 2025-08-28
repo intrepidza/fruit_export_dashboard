@@ -13,3 +13,4 @@ temp.py
 secret.key
 share/
 _documents/
+pdf_table_extractor.py
